@@ -12,3 +12,10 @@
 # Cross-artifact rotation backups (Emergent workspace only)
 .artifact_backups/
 memory/
+.env
+.env.*
+*.env
+credentials.json
+*.pem
+*.key
+.credentials
