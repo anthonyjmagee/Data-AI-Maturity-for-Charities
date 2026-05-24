@@ -1,10 +1,10 @@
 import "@/App.css";
-import SENDDiagnosticTool from "@/components/SENDDiagnosticTool";
+import NeurodivergentAssessment from "@/components/NeurodivergentAssessment";
 
 function App() {
   return (
     <div className="App">
-      <SENDDiagnosticTool />
+      <NeurodivergentAssessment />
     </div>
   );
 }

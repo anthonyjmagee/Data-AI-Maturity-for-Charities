@@ -1,26 +1,26 @@
-# SEND Diagnostic Tool
+# Enhanced Clinical Neurodivergent Assessment Platform
 
-An interactive diagnostic tool for evaluating **SEND (Special Educational Needs and Disabilities)** provision across Multi-Academy Trusts and individual schools. Based on the SEND Code of Practice 2015 and Ofsted Framework 2025.
+A comprehensive clinical platform for **neurodivergent assessment and management** — patient records, validated screeners (ASRS), outcomes tracking and reporting dashboards. Built as a React single-page application.
 
 Originally authored as a [Claude](https://claude.ai) artifact and migrated to a runnable React project via [Emergent](https://emergent.sh).
 
+> **Demo login:** any username/password is accepted in the sign-in screen.
+
 ## Features
 
-- **Two diagnostic levels**
-  - **Executive Level (ELD)** — 8 categories covering Trust-wide strategy, governance, resources, workforce, partnerships, QA, compliance and innovation.
-  - **School Level (SLD)** — 11 categories covering identification, provision, curriculum, planning, SENDCO leadership, staffing, parental engagement, multi-agency working, transitions, safeguarding and statutory duties.
-- **Live compliance scoring** — Real-time per-category and overall compliance percentages.
-- **Completion tracking** — See how much of the assessment is done.
-- **ELD ↔ SLD alignment** — School categories show which executive category they map to.
-- **Trust / School info capture** — Context-aware form fields based on the selected diagnostic level.
-- **Sticky sidebar navigation** with per-category status indicators.
+- **Role-based sign-in** — Healthcare Provider / Patient / Administrator personas.
+- **Patient records** — Demographics, emergency contacts, primary diagnoses, comorbidities, medications, allergies, insurance, care team.
+- **Validated screeners** — Adult ADHD Self-Report Scale (ASRS-v1.1) and extensible question banks.
+- **Outcomes tracking** — GAF, CGAS, and functional assessment domains (work/school, social, family, self-care).
+- **Visual dashboards** — Built with [Recharts](https://recharts.org) for line, bar, area, pie, scatter and radial views.
+- **Accessibility-aware UI** — Theme/font/zoom toggles via lucide-react icons.
 
 ## Tech Stack
 
 - React 19
 - Tailwind CSS 3
 - lucide-react (icons)
-- react-router-dom
+- recharts (charts and visualisations)
 - CRACO (build tooling)
 
 ## Project Structure
@@ -28,12 +28,12 @@ Originally authored as a [Claude](https://claude.ai) artifact and migrated to a 
 ```
 frontend/
 ├── src/
-│   ├── App.js                          # Root: renders the diagnostic tool
-│   ├── index.js                        # React entry point
-│   ├── index.css                       # Global styles
-│   ├── App.css                         # App styles
+│   ├── App.js                                  # Root: renders the platform
+│   ├── index.js                                # React entry point
+│   ├── index.css                               # Global styles
+│   ├── App.css                                 # App styles
 │   └── components/
-│       └── SENDDiagnosticTool.jsx      # Main diagnostic component
+│       └── NeurodivergentAssessment.jsx        # Main clinical platform
 ├── tailwind.config.js
 ├── postcss.config.js
 └── package.json
@@ -47,7 +47,7 @@ yarn install
 yarn start
 ```
 
-Open http://localhost:3000.
+Open http://localhost:3000 and sign in with any credentials.
 
 ## Build
 
@@ -56,6 +56,10 @@ cd frontend
 yarn build
 ```
 
+## Disclaimer
+
+This is a **demonstration platform**. It is **not** a certified medical device, does not store data securely, and must not be used for live clinical decision-making without appropriate validation, security review and regulatory approval.
+
 ## Credits
 
-Framework based on the **SEND Code of Practice 2015** and **Ofsted Framework 2025**. Originally authored in Claude.ai.
+Originally authored in Claude.ai.
