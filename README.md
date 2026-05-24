@@ -1,65 +1,59 @@
-# Enhanced Clinical Neurodivergent Assessment Platform
+# Data & AI Maturity Index — Charity Edition
 
-A comprehensive clinical platform for **neurodivergent assessment and management** — patient records, validated screeners (ASRS), outcomes tracking and reporting dashboards. Built as a React single-page application.
+An interactive **data and AI maturity assessment** designed for charities and non-profits. Self-contained single-page HTML application with built-in **Google Analytics 4 (GA4)** tracking, ready to embed in Wix, WordPress, or any static host.
 
-Originally authored as a [Claude](https://claude.ai) artifact and migrated to a runnable React project via [Emergent](https://emergent.sh).
+Originally authored as a [Claude](https://claude.ai) artifact and migrated via [Emergent](https://emergent.sh).
 
-> **Demo login:** any username/password is accepted in the sign-in screen.
+## What it does
 
-## Features
+- Walks users through a multi-step **maturity assessment** across data, infrastructure, skills, governance and AI readiness.
+- Calculates a **maturity score** and surfaces tailored recommendations.
+- Sends **custom events to GA4** at each step so you can analyse drop-off and completion funnels in your analytics dashboard.
+- Mobile-friendly responsive layout.
 
-- **Role-based sign-in** — Healthcare Provider / Patient / Administrator personas.
-- **Patient records** — Demographics, emergency contacts, primary diagnoses, comorbidities, medications, allergies, insurance, care team.
-- **Validated screeners** — Adult ADHD Self-Report Scale (ASRS-v1.1) and extensible question banks.
-- **Outcomes tracking** — GAF, CGAS, and functional assessment domains (work/school, social, family, self-care).
-- **Visual dashboards** — Built with [Recharts](https://recharts.org) for line, bar, area, pie, scatter and radial views.
-- **Accessibility-aware UI** — Theme/font/zoom toggles via lucide-react icons.
+## How to use
 
-## Tech Stack
-
-- React 19
-- Tailwind CSS 3
-- lucide-react (icons)
-- recharts (charts and visualisations)
-- CRACO (build tooling)
-
-## Project Structure
-
-```
-frontend/
-├── src/
-│   ├── App.js                                  # Root: renders the platform
-│   ├── index.js                                # React entry point
-│   ├── index.css                               # Global styles
-│   ├── App.css                                 # App styles
-│   └── components/
-│       └── NeurodivergentAssessment.jsx        # Main clinical platform
-├── tailwind.config.js
-├── postcss.config.js
-└── package.json
-```
-
-## Local Development
+### Option 1 — Direct browser
+Just open `index.html` in any modern browser. No build step, no dependencies.
 
 ```bash
-cd frontend
-yarn install
-yarn start
+open index.html        # macOS
+xdg-open index.html    # Linux
+start index.html       # Windows
 ```
 
-Open http://localhost:3000 and sign in with any credentials.
+### Option 2 — Embed in Wix / WordPress / any site
+Copy the contents of `index.html` into an **HTML embed / custom code** block. The file has no external dependencies beyond the GA4 script (loaded from Google) and Google Fonts via `-apple-system` fallbacks.
 
-## Build
+### Option 3 — Host on GitHub Pages
+1. In this repository → **Settings → Pages**
+2. Source: **Deploy from a branch** → branch `main`, folder `/ (root)`
+3. Your tool is live at `https://<your-username>.github.io/<repo-name>/`
 
-```bash
-cd frontend
-yarn build
+### Option 4 — Any static host (Netlify, Vercel, S3, Cloudflare Pages)
+Drop the file in and you're done.
+
+## Configuring GA4
+
+The current GA4 Measurement ID is hard-coded near the top of `index.html`:
+
+```html
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GN42BFMLCM"></script>
+<script>
+    gtag('config', 'G-GN42BFMLCM', { ... });
 ```
 
-## Disclaimer
+To track events in **your** GA4 property, search the file for `G-GN42BFMLCM` and replace both occurrences with your own Measurement ID (format `G-XXXXXXXXXX`).
 
-This is a **demonstration platform**. It is **not** a certified medical device, does not store data securely, and must not be used for live clinical decision-making without appropriate validation, security review and regulatory approval.
+## File structure
+
+```
+.
+├── index.html        # The entire tool — HTML + CSS + JS + GA4 in one file
+├── README.md
+└── .gitignore
+```
 
 ## Credits
 
-Originally authored in Claude.ai.
+Originally authored in Claude.ai. Migrated for personal use.
