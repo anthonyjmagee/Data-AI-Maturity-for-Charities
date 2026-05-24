@@ -80,3 +80,8 @@ memory/test_credentials.md
 
 # Mobile development
 android-sdk/
+
+# Cross-artifact rotation backups (not part of any individual repo)
+.artifact_backups/
+memory/
+test_reports/
